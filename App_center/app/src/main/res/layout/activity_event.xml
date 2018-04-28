@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="82dp"
+        android:text="행사등록"
+        android:textAlignment="textStart"
+        android:textColor="#ffffff"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView12"
+        android:layout_below="@+id/textView12"
+        android:layout_marginTop="26dp"
+        android:text="제목"
+        android:textAlignment="textStart"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="295dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/textView13"
+        android:layout_below="@+id/textView13"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textAlignment="textStart"
+        android:backgroundTint="#ffffff"
+        android:background="@drawable/xml_border"/>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editText9"
+        android:layout_below="@+id/editText9"
+        android:layout_marginTop="15dp"
+        android:text="위치"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="295dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/textView14"
+        android:layout_below="@+id/textView14"
+        android:layout_marginTop="23dp"
+        android:ems="20"
+        android:inputType="textPostalAddress"
+        android:singleLine="false"
+        android:textAlignment="textStart"
+        android:textColor="#ffffff"
+        android:backgroundTint="#ffffff"
+        android:background="@drawable/xml_border"/>
+
+
+
+    <TextView
+        android:id="@+id/EventDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editText6"
+        android:layout_below="@+id/editText6"
+        android:layout_marginTop="23dp"
+        android:text="날짜"
+        android:textAlignment="textStart"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/edit_EventDate"
+        android:layout_width="295dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/EventDate"
+        android:layout_below="@+id/EventDate"
+        android:layout_marginTop="13dp"
+        android:ems="20"
+        android:backgroundTint="#ffffff"
+        android:background="@drawable/xml_border"/>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editText6"
+        android:layout_below="@id/edit_EventDate"
+        android:layout_marginTop="13dp"
+        android:text="시간"
+        android:textAlignment="textStart"
+        android:textColor="#ffffff"/>
+
+    <EditText
+        android:id="@+id/edit_time"
+        android:layout_width="295dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/EventDate"
+        android:layout_below="@+id/time"
+        android:layout_marginTop="13dp"
+        android:ems="20"
+        android:inputType="time"
+        android:backgroundTint="#ffffff"
+        android:background="@drawable/xml_border"/>
+
+</RelativeLayout>

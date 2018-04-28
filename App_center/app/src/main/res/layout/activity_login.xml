@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:id="@+id/settingPage">
+
+    <TextView
+        android:id="@+id/LoginText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:textSize="30dp"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="57dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="29dp" />
+
+    <TextView
+        android:id="@+id/HakbunText"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/LoginText"
+        android:layout_alignStart="@+id/LoginText"
+        android:layout_below="@+id/LoginText"
+        android:layout_marginTop="30dp"
+        android:text="학번"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/HakbunEdit"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/white"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/HakbunText"
+        android:layout_alignStart="@+id/HakbunText"
+        android:inputType="number"
+        android:singleLine="true"
+        android:maxLength="10"/>
+
+    <TextView
+        android:id="@+id/PasswordText"
+        android:textColor="@android:color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/HakbunEdit"
+        android:layout_alignStart="@+id/HakbunEdit"
+        android:layout_below="@+id/HakbunEdit"
+        android:layout_marginTop="30dp"
+        android:text="비밀번호"
+        android:textSize="20dp" />
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/PasswordText"
+        android:layout_alignStart="@+id/PasswordText"
+        android:layout_below="@+id/PasswordText"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/white"
+        android:layout_alignEnd="@+id/Blogin"
+        android:id="@+id/PasswordEdit"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:maxLength="20"/>
+
+    <Button
+        android:id="@+id/Blogin"
+        android:textColor="@android:color/white"
+        android:background="@null"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="확인"
+        android:layout_marginEnd="24dp"
+        android:layout_below="@+id/resultF"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="35dp" />
+
+    <TextView
+        android:id="@+id/resultF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/PasswordEdit"
+        android:layout_below="@+id/PasswordEdit"
+        android:layout_marginTop="22dp"
+        android:visibility="invisible"
+        android:textColor="#ff0000"
+        android:text="학번 또는 비밀번호를 다시 확인해 주세요." />
+</RelativeLayout>

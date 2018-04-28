@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/perfect"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="201dp"
+        android:background="@drawable/img2" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:text="퍼펙트 Perfect!"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingLeft="20dp"
+        android:textSize="15dp"
+        android:text="볼링부"/>
+
+    <TextView
+        android:id="@+id/place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:textSize="15dp"
+        android:text="학생회관 303호"/>
+
+    <ImageView
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:src="@mipmap/line_2"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarFadeDuration="0"
+            android:scrollbarStyle="outsideInset"
+            android:scrollbarThumbVertical="@color/scrollbar"
+            android:scrollbarTrackVertical="@color/scrollbarBackground"
+            android:scrollbarSize="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:text=" 안녕하십니까. 인천대학교 볼링부 퍼펙트입니다.\n
+볼링부는 볼링을 치며 서로 친목을 다지는 동아리로써 매주 금요일 7
+시에 부평에 위치한 부평볼링장에서 정기전을 치루고 있으며 정기전
+때에는 볼링을 처음 배우는 초보자가 쉽고 빠르게 배울 수 있도록
+도와주고 있습니다.\n
+\n
+그 외에도 볼링부원간의 단합을 위해서 신입생 환영회 및 개강총회,
+야유회, MT를 계획하여 진행하고 있습니다.
+또한 특별한 볼링행사로는 쌍쌍볼링 및 마스터전을 매년 2회씩
+진행하고 있습니다.\n
+ㅇ\n
+ㅇ\n
+ㅇ\n
+ㅇ\n
+"
+                android:textSize="15dp" />
+        </ScrollView>
+
+        <ImageButton
+            android:id="@+id/ApplyButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="@mipmap/apply"
+            android:scaleType="centerInside"
+            android:onClick="mOnPopupClick"/>
+
+    </RelativeLayout>
+</LinearLayout>

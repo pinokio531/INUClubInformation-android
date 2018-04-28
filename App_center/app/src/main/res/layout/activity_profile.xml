@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/profile"
+            android:scaleType="fitStart"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/profile"
+            android:background="@android:color/white" />
+        <TextView
+            android:paddingTop="20dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="김이름"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="80dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="행사 등록"
+            android:gravity="left|center_vertical"
+            android:textSize="20dp"
+            android:background="@android:color/white"
+            android:layout_marginBottom="10dp"/>
+        <ImageView
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/line_2"/>
+
+        <Button
+            android:id="@+id/modify_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="행사 수정"
+            android:gravity="left|center_vertical"
+            android:textSize="20dp"
+            android:background="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+        <ImageView
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/line_2"/>
+
+        <Button
+            android:id="@+id/modify_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="동아리 내용수정"
+            android:gravity="left|center_vertical"
+            android:textSize="20dp"
+            android:background="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/line_2"/>
+
+        <Button
+            android:id="@+id/modify_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="동아리 사진수정"
+            android:gravity="left|center_vertical"
+            android:textSize="20dp"
+            android:background="@android:color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+        <ImageView
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/line_2"/>
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="로그아웃"
+            android:gravity="left|center_vertical"
+            android:textSize="20dp"
+            android:background="@android:color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@mipmap/line_2" />
+
+            <TableRow>
+
+                <ImageButton
+                    android:id="@+id/tab1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/tab1" />
+
+                <ImageButton
+                    android:id="@+id/tab2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/tab2" />
+
+                <ImageButton
+                    android:id="@+id/tab3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/tab3_click" />
+
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</LinearLayout>

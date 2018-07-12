@@ -3,6 +3,7 @@
     package="com.ourincheon.app_center">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:windowSoftInputMode="stateAlwaysHidden"
         android:allowBackup="true"
@@ -10,8 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".application.ApplicationController">
+        android:theme="@style/AppTheme">
         <activity android:name=".SplashActivity"
             android:theme="@style/WhiteTheme">
             <intent-filter>
@@ -20,11 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".list_view.list2"
+            android:theme="@style/WhiteTheme"></activity>
         <activity
             android:name=".Viewpager_main"
             android:theme="@style/WhiteTheme"/>
         <activity
-            android:name=".List"
+            android:name=".list_view.List"
             android:theme="@style/WhiteTheme"/>
         <activity
             android:name=".Apply"
@@ -44,6 +46,8 @@
         <activity
             android:name=".PopUp"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
+        <activity android:name=".testPage"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
             android:name=".Profile"
             android:theme="@style/WhiteTheme"></activity>

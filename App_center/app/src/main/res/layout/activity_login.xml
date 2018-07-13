@@ -21,7 +21,7 @@
         android:layout_marginStart="29dp" />
 
     <TextView
-        android:id="@+id/HakbunText"
+        android:id="@+id/loginID"
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,25 +33,25 @@
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/HakbunEdit"
+        android:id="@+id/idInfo"
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/white"
         android:textColor="@android:color/white"
-        android:layout_below="@+id/HakbunText"
-        android:layout_alignStart="@+id/HakbunText"
-        android:inputType="number"
+        android:layout_below="@+id/loginID"
+        android:layout_alignStart="@+id/loginID"
+        android:text="app"
         android:singleLine="true"
         android:maxLength="10"/>
 
     <TextView
-        android:id="@+id/PasswordText"
+        android:id="@+id/loginPW"
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/HakbunEdit"
-        android:layout_alignStart="@+id/HakbunEdit"
-        android:layout_below="@+id/HakbunEdit"
+        android:layout_alignLeft="@+id/idInfo"
+        android:layout_alignStart="@+id/idInfo"
+        android:layout_below="@+id/idInfo"
         android:layout_marginTop="30dp"
         android:text="비밀번호"
         android:textSize="20dp" />
@@ -59,14 +59,14 @@
     <EditText
         android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/PasswordText"
-        android:layout_alignStart="@+id/PasswordText"
-        android:layout_below="@+id/PasswordText"
+        android:layout_alignLeft="@+id/loginPW"
+        android:layout_alignStart="@+id/loginPW"
+        android:layout_below="@+id/loginPW"
+        android:text="cen"
         android:textColor="@android:color/white"
         android:backgroundTint="@android:color/white"
         android:layout_alignEnd="@+id/Blogin"
-        android:id="@+id/PasswordEdit"
-        android:inputType="textPassword"
+        android:id="@+id/pwInfo"
         android:singleLine="true"
         android:maxLength="20"/>
 
@@ -85,12 +85,9 @@
 
     <TextView
         android:id="@+id/resultF"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/PasswordEdit"
-        android:layout_below="@+id/PasswordEdit"
-        android:layout_marginTop="22dp"
-        android:visibility="invisible"
-        android:textColor="#ff0000"
-        android:text="학번 또는 비밀번호를 다시 확인해 주세요." />
+        android:layout_alignStart="@+id/pwInfo"
+        android:layout_below="@+id/pwInfo"
+        android:layout_marginTop="22dp" />
 </RelativeLayout>

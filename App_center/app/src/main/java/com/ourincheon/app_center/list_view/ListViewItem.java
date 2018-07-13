@@ -5,7 +5,7 @@ package com.ourincheon.app_center.list_view;
  */
 
 public class ListViewItem {
-    public String clubCategory;
     public String clubName;
     public String clubLocation;
+    public String clubImage;
 }

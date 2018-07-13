@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.ourincheon.app_center.mainActivity.MainActivity;
+
 public class Profile extends AppCompatActivity {
     ImageButton tab1;
     ImageButton tab2;

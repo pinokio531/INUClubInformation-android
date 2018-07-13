@@ -20,14 +20,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".list_view.list2"
+
+        <activity android:name=".mainActivity.Login"
             android:theme="@style/WhiteTheme"></activity>
+
         <activity
-            android:name=".Viewpager_main"
+            android:name=".mainActivity.Viewpager_main"
             android:theme="@style/WhiteTheme"/>
+
         <activity
             android:name=".list_view.List"
-            android:theme="@style/WhiteTheme"/>
+            android:theme="@style/WhiteTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
         <activity
             android:name=".Apply"
             android:theme="@style/WhiteTheme"/>

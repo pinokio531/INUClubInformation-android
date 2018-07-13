@@ -8,7 +8,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetworkController extends Application{
-    static final String URL = "http://13.124.254.99:3303/";
+    static final String URL = "http://inuclub.us.to:3303/";
+    //inuclub.us.to:3303/
+    //13.124.254.99:3303/
 
     private static NetworkController ourInstance = new NetworkController();
     public static NetworkController getInstance(){

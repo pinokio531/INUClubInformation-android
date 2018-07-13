@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.ourincheon.app_center.R;
 
 import java.util.ArrayList;
@@ -24,34 +26,40 @@ public class ListViewAdaptor extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return layout;
+        return itemCategory.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return this.itemCategory.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        Context context = parent.getContext();
         if(convertView == null){
-            final Context context = parent.getContext();
             if(layoutInflater == null){
                 layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             }
             convertView = layoutInflater.inflate(R.layout.club_list_item, parent, false);
         }
 
-        TextView category = (TextView) convertView.findViewById(R.id.clubExplain);
         TextView name = (TextView) convertView.findViewById(R.id.clubName);
         TextView location = (TextView) convertView.findViewById(R.id.clubPlace);
+        ImageView image = (ImageView) convertView.findViewById(R.id.clubImageView);
 
-        category.setText(itemCategory.get(position).clubCategory);
+        image.setImageResource(R.drawable.img1);
+        if(itemCategory.get(position).clubImage.length() > 7)
+        {
+            String url = "http://inuclub.us.to:3303/" + itemCategory.get(position).clubImage;
+            Glide.with(context).load(url).into(image);
+        }
+
         name.setText(itemCategory.get(position).clubName);
         location.setText(itemCategory.get(position).clubLocation);
 

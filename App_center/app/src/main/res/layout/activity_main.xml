@@ -18,179 +18,189 @@
         android:maxLength="10"
         android:paddingLeft="40dp"/>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="230dp"
-        android:layout_marginBottom="30dp"
-        android:layout_below="@+id/SearchEdit">
-    </android.support.v4.view.ViewPager>
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp">
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="60dp"
             android:orientation="vertical"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:gravity="bottom">
+
+            <ImageView
+                android:id="@+id/testImage"
+                android:layout_marginBottom="22dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"/>
 
             <LinearLayout
+                android:id="@+id/menuList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:background="@drawable/button_border">
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
-                    <ImageButton
-                        android:id="@+id/sports"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/soccer"
-                        android:layout_marginBottom="5dp"
-                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="30dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:background="@drawable/button_border">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="스포츠"
-                        android:layout_marginTop="5dp"/>
+                        <ImageButton
+                            android:id="@+id/sports"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/soccer"
+                            android:layout_marginBottom="5dp"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="스포츠"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="30dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:background="@drawable/button_border">
+
+                        <ImageButton
+                            android:id="@+id/religion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/pray"
+                            android:layout_marginBottom="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="종교"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="30dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/button_border">
+
+                        <ImageButton
+                            android:id="@+id/culture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/party"
+                            android:layout_marginBottom="5dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="문화"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:background="@drawable/button_border">
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
-                    <ImageButton
-                        android:id="@+id/religion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/pray"
-                        android:layout_marginBottom="5dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="30dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:background="@drawable/button_border">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="종교"
-                        android:layout_marginTop="5dp"/>
-                </LinearLayout>
+                        <ImageButton
+                            android:id="@+id/bongsa"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/love"
+                            />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="30dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/button_border">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="봉사"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
 
-                    <ImageButton
-                        android:id="@+id/culture"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/party"
-                        android:layout_marginBottom="5dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="30dp"
+                        android:background="@drawable/button_border">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="문화"
-                        android:layout_marginTop="5dp"/>
+                        <ImageButton
+                            android:id="@+id/habit"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/card" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="취미/전시"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="30dp"
+                        android:orientation="vertical"
+                        android:background="@drawable/button_border">
+
+                        <ImageButton
+                            android:id="@+id/study"
+                            android:layout_marginBottom="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/book" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="교양/학술"
+                            android:layout_marginTop="5dp"/>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:padding="30dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:background="@drawable/button_border">
-
-                    <ImageButton
-                        android:id="@+id/bongsa"
-                        android:layout_marginBottom="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/love"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="봉사"
-                        android:layout_marginTop="5dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="30dp"
-                    android:background="@drawable/button_border">
-
-                    <ImageButton
-                        android:id="@+id/habit"
-                        android:layout_marginBottom="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/card" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="취미/전시"
-                        android:layout_marginTop="5dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="30dp"
-                    android:orientation="vertical"
-                    android:background="@drawable/button_border">
-
-                    <ImageButton
-                        android:id="@+id/study"
-                        android:layout_marginBottom="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/book" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="교양/학술"
-                        android:layout_marginTop="5dp"/>
-                </LinearLayout>
-            </LinearLayout>
 
         </LinearLayout>
+
     </RelativeLayout>
 </LinearLayout>

@@ -1,141 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:orientation="vertical"
-    android:layout_centerInParent="true"
-    android:layout_centerVertical="true">
+    android:orientation="vertical">
 
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="145dp"
-        android:layout_height="45dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="49dp"
-        android:fontFamily="sans-serif"
-        android:text="동아리수정"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/white"
-        android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="150dp"
-        android:layout_height="19dp"
-        android:layout_alignStart="@+id/textView5"
-        android:layout_below="@+id/textView5"
-        android:layout_marginTop="27.7dp"
-        android:text="동아리의 내용을 적어주세요"
-        android:textColor="@android:color/white"
-        android:textSize="13sp" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="295dp"
-        android:layout_height="132.7dp"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_below="@+id/textView6"
-        android:layout_marginTop="11dp"
-        android:inputType="textMultiLine"
-        android:lines="8"
-        android:maxLines="10"
-        android:minLines="2"
-        android:scrollbars="horizontal"
-        android:singleLine="false"
-        android:backgroundTint="#ffffff"
-        android:background="@drawable/xml_border"/>
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_below="@+id/editText3"
-        android:layout_marginTop="11dp"
-        android:text="동아리의 지원서 주소를 적어주세요"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/white"
-        android:textSize="13sp" />
-
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="295dp"
-        android:layout_height="24dp"
-        android:layout_alignStart="@+id/textView7"
-        android:layout_below="@+id/textView7"
-        android:layout_marginTop="8.9dp"
-        android:singleLine="false"
-        android:textAlignment="textStart"
-        android:backgroundTint="#ffffff"
-        android:background="@drawable/xml_border"/>
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText4"
-        android:layout_below="@+id/editText4"
-        android:layout_marginTop="18.1dp"
-        android:text="동아리회장의 이름을 적어주세요"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/white"
-        android:textSize="13sp" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="295dp"
-        android:layout_height="24dp"
-        android:layout_alignStart="@+id/textView8"
-        android:layout_below="@+id/textView8"
-        android:layout_marginTop="8.9dp"
-        android:singleLine="false"
-        android:textAlignment="textStart"
-        android:backgroundTint="#ffffff"
-        android:background="@drawable/xml_border"/>
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/editText5"
-        android:layout_below="@+id/editText5"
-        android:layout_marginTop="18.1dp"
-        android:text="동아리회장의 연락처를 적어주세요"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/white"
-        android:textSize="13sp" />
-
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="295dp"
-        android:layout_height="24dp"
-        android:layout_alignStart="@+id/textView9"
-        android:layout_below="@+id/textView9"
-        android:layout_marginTop="16dp"
-        android:ems="11"
-        android:inputType="number"
-        android:singleLine="true"
-        android:backgroundTint="#ffffff"
-        android:background="@drawable/xml_border"/>
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/editText7"
-        android:layout_marginEnd="38dp"
-        android:text="제출"
-        android:textSize="18sp"
+        android:paddingTop="70dp"
+        android:paddingLeft="30dp"
+        android:paddingBottom="10dp"
+        android:text="동아리 수정"
         android:textColor="#ffffff"
-        android:background="#00fabfbf"/>
+        android:textSize="30dp" />
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/writeContents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="동아리의 내용을 적어주세요"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:paddingLeft="8dp"/>
+
+        <EditText
+            android:id="@+id/writeContentsEdit"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:backgroundTint="#ffffff"
+            android:background="@drawable/xml_border"
+            android:textSize="11sp"
+            android:textColor="#de000000"
+            android:gravity="start"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/writeRepresent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="동아리회장의 이름을 적어주세요"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:paddingLeft="8dp"/>
+
+        <EditText
+            android:id="@+id/writeRepresentEdit"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:backgroundTint="#ffffff"
+            android:background="@drawable/xml_border"
+            android:textSize="11sp"
+            android:maxLines="1"
+            android:textColor="#de000000"
+            android:gravity="start"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/writePhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="동아리회장의 연락처를 적어주세요"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:paddingLeft="8dp"/>
+
+        <EditText
+            android:id="@+id/writePhoneEdit"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:maxLines="1"
+            android:backgroundTint="#ffffff"
+            android:background="@drawable/xml_border"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:inputType="number"
+            android:textSize="11sp"
+            android:textColor="#de000000"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="30dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/Blogin"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/btn_setting"
+            android:text="제출" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/Blogin"/>
+    </RelativeLayout>
 
 
 
-</RelativeLayout>
+</LinearLayout>

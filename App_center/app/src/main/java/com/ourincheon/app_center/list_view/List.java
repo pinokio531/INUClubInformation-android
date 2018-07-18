@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,7 +28,7 @@ import retrofit2.Response;
 public class List extends AppCompatActivity{
 
     private ListView listView = null;
-    Context context;
+    ArrayList<ListViewItem> clubList;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +56,7 @@ public class List extends AppCompatActivity{
         call.enqueue(new Callback<ArrayList<JsonObject>>() {
             @Override
             public void onResponse(Call<ArrayList<JsonObject>> call, Response<ArrayList<JsonObject>> response) {
-                ArrayList<ListViewItem> clubList = new ArrayList<>();
+                clubList = new ArrayList<>();
                     for(int i = 0; i < response.body().size(); i++){
 
                         ListViewItem listViewItem = new ListViewItem();
@@ -63,10 +64,12 @@ public class List extends AppCompatActivity{
                         String nameOfClub = response.body().get(i).getAsJsonObject().get("clubname").toString();
                         String locationOfClub = response.body().get(i).getAsJsonObject().get("location").toString();
                         String imageOfClub = response.body().get(i).getAsJsonObject().get("image1").toString();
+                        int numOfClub = response.body().get(i).getAsJsonObject().get("num").getAsInt();
 
                         listViewItem.clubImage = imageOfClub.replace("\"", "");
                         listViewItem.clubName = nameOfClub.replace("\"", "");
                         listViewItem.clubLocation = locationOfClub.replace("\"", "");
+                        listViewItem.clubNum = numOfClub;
                         clubList.add(listViewItem);
 
                         ListViewAdaptor adaptor = new ListViewAdaptor(clubList);
@@ -77,6 +80,15 @@ public class List extends AppCompatActivity{
             @Override
             public void onFailure(Call<ArrayList<JsonObject>> call, Throwable t) {
 
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(List.this, IntroduceClub.class);
+                intent.putExtra("club_number", clubList.get(i).clubNum);
+                startActivity(intent);
             }
         });
     }

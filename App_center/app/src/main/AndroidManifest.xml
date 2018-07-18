@@ -5,10 +5,9 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:windowSoftInputMode="stateAlwaysHidden"
         android:allowBackup="true"
         android:icon="@mipmap/icon"
-        android:label="@string/app_name"
+        android:label="인천대\n동아리"
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -25,6 +24,7 @@
             android:theme="@style/WhiteTheme"></activity>
 
         <activity
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:name=".mainActivity.Viewpager_main"
             android:theme="@style/WhiteTheme"/>
 
@@ -32,29 +32,31 @@
             android:name=".list_view.List"
             android:theme="@style/WhiteTheme"
             android:windowSoftInputMode="stateAlwaysHidden"/>
+
         <activity
-            android:name=".Apply"
-            android:theme="@style/WhiteTheme"/>
+            android:name=".list_view.IntroduceClub"
+            android:theme="@style/WhiteTheme"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name=".Loading"
+            android:theme="@style/WhiteTheme"></activity>
         <activity
-            android:name=".Event"
+            android:name=".mainActivity.Setting.ModifyEvent.Event"
             android:theme="@style/BlueTheme"/>
         <activity
-            android:name=".EventDate"
+            android:name=".mainActivity.Setting.ModifyEvent.EventDate"
             android:theme="@style/BlueTheme"/>
         <activity
-            android:name=".ModifyPhoto"
+            android:name=".mainActivity.Setting.ModifyClubInformation.ModifyPhoto"
             android:theme="@style/BlueTheme"/>
         <activity
-            android:name=".ModifyText"
+            android:name=".mainActivity.Setting.ModifyClubInformation.ModifyText"
             android:theme="@style/BlueTheme"/>
         <activity
             android:name=".PopUp"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
         <activity android:name=".testPage"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity
-            android:name=".Profile"
-            android:theme="@style/WhiteTheme"></activity>
     </application>
 
 </manifest>

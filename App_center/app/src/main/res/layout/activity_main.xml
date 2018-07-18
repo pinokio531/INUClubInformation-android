@@ -51,6 +51,7 @@
                     android:gravity="center">
 
                     <LinearLayout
+                        android:id="@+id/sportsLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -75,6 +76,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/religionLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -98,6 +100,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/cultureLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -128,6 +131,7 @@
                     android:gravity="center">
 
                     <LinearLayout
+                        android:id="@+id/bongsaLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -152,6 +156,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/habitLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -175,6 +180,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/studyLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"

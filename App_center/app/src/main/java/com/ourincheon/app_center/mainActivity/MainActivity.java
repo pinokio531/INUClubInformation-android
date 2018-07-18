@@ -37,6 +37,13 @@ public class MainActivity extends Fragment {
         ImageButton bu_habit = (ImageButton) layout.findViewById(R.id.habit);
         ImageButton bu_study = (ImageButton) layout.findViewById(R.id.study);
 
+        LinearLayout sports = (LinearLayout) layout.findViewById(R.id.sportsLayout);
+        LinearLayout religion = (LinearLayout) layout.findViewById(R.id.religionLayout);
+        LinearLayout culture = (LinearLayout) layout.findViewById(R.id.cultureLayout);
+        LinearLayout bongsa = (LinearLayout) layout.findViewById(R.id.bongsaLayout);
+        LinearLayout habit = (LinearLayout) layout.findViewById(R.id.habitLayout);
+        LinearLayout study = (LinearLayout) layout.findViewById(R.id.studyLayout);
+
         ImageView imageView = (ImageView) layout.findViewById(R.id.testImage);
 
         Glide.with(getContext()).load("http://inuclub.us.to:3303/main_img/untitleds.png").into(imageView);
@@ -50,61 +57,97 @@ public class MainActivity extends Fragment {
             }
         });
 
+        sports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intentToList("스포츠");
+            }
+        });
+
         bu_sports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), List.class);
-                intent.putExtra("category", "스포츠");
-                startActivity(intent);
+                intentToList("스포츠");
+            }
+        });
+
+        religion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intentToList("종교");
             }
         });
 
         bu_religion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), List.class);
-                intent.putExtra("category", "종교");
-                startActivity(intent);
+                intentToList("종교");
+            }
+        });
+
+        culture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intentToList("문화");
             }
         });
 
         bu_culture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), List.class);
-                intent.putExtra("category", "문화");
-                startActivity(intent);
+                intentToList("문화");
+            }
+        });
+
+        bongsa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intentToList("봉사");
             }
         });
 
         bu_bongsa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), List.class);
-                intent.putExtra("category", "봉사");
-                startActivity(intent);
+                intentToList("봉사");
+            }
+        });
+
+        habit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intentToList("취미전시");
             }
         });
 
         bu_habit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), List.class);
-                intent.putExtra("category", "취미전시");
-                startActivity(intent);
+                intentToList("취미전시");
+            }
+        });
+
+        study.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intentToList("교양학술");
             }
         });
 
         bu_study.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), List.class);
-                intent.putExtra("category", "교양학술");
-                startActivity(intent);
+                intentToList("교양학술");
             }
         });
 
         return layout;
 
+    }
+
+    public void intentToList(String str){
+        Intent intent = new Intent(getActivity(), List.class);
+        intent.putExtra("category", str);
+        startActivity(intent);
     }
 }

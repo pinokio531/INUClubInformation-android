@@ -1,93 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:orientation="vertical"
     android:id="@+id/settingPage">
 
     <TextView
         android:id="@+id/LoginText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingTop="70dp"
+        android:paddingLeft="30dp"
+        android:paddingBottom="10dp"
         android:text="로그인"
-        android:textSize="30dp"
-        android:textColor="@android:color/white"
-        android:layout_marginLeft="30dp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="30dp" />
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="57dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="29dp" />
+        android:layout_marginLeft="30dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/loginID"
-        android:textColor="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/LoginText"
-        android:layout_alignStart="@+id/LoginText"
-        android:layout_below="@+id/LoginText"
-        android:layout_marginTop="30dp"
-        android:text="학번"
-        android:textSize="20dp" />
+        <TextView
+            android:id="@+id/loginID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학번"
+            android:textSize="18dp"
+            android:textColor="#ffffff"
+            android:paddingLeft="8dp"/>
 
-    <EditText
-        android:id="@+id/idInfo"
-        android:layout_width="330dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/white"
-        android:textColor="@android:color/white"
-        android:layout_below="@+id/loginID"
-        android:layout_alignStart="@+id/loginID"
-        android:text="app"
-        android:singleLine="true"
-        android:maxLength="10"/>
+        <EditText
+            android:text="app"
+            android:id="@+id/idInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:textSize="22dp"
+            android:textColor="#ffffff"
+            android:backgroundTint="#ffffff"
+            android:singleLine="true"
+            android:paddingBottom="10dp"
+            android:maxLength="20"
+            android:padding="8dp"/>
 
-    <TextView
-        android:id="@+id/loginPW"
-        android:textColor="@android:color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/idInfo"
-        android:layout_alignStart="@+id/idInfo"
-        android:layout_below="@+id/idInfo"
-        android:layout_marginTop="30dp"
-        android:text="비밀번호"
-        android:textSize="20dp" />
+    </LinearLayout>
 
-    <EditText
-        android:layout_width="330dp"
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/loginPW"
-        android:layout_alignStart="@+id/loginPW"
-        android:layout_below="@+id/loginPW"
-        android:text="cen"
-        android:textColor="@android:color/white"
-        android:backgroundTint="@android:color/white"
-        android:layout_alignEnd="@+id/Blogin"
-        android:id="@+id/pwInfo"
-        android:singleLine="true"
-        android:maxLength="20"/>
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/Blogin"
-        android:textColor="@android:color/white"
-        android:background="@null"
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="확인"
-        android:layout_marginEnd="24dp"
-        android:layout_below="@+id/resultF"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="35dp" />
+        <TextView
+            android:id="@+id/loginPW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호"
+            android:textSize="18dp"
+            android:textColor="#ffffff"
+            android:paddingLeft="8dp"/>
+
+        <EditText
+            android:text="cen"
+            android:id="@+id/pwInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="22dp"
+            android:backgroundTint="#ffffff"
+            android:singleLine="true"
+            android:inputType="textPassword"
+            android:maxLength="20"
+            android:padding="8dp"/>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/resultF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/pwInfo"
-        android:layout_below="@+id/pwInfo"
+        android:gravity="center"
         android:layout_marginTop="22dp" />
-</RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/Blogin"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/btn_setting"
+            android:text="확인" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/Blogin"/>
+    </RelativeLayout>
+
+</LinearLayout>

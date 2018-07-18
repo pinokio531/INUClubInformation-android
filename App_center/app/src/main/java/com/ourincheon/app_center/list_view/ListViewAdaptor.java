@@ -53,7 +53,7 @@ public class ListViewAdaptor extends BaseAdapter {
         TextView location = (TextView) convertView.findViewById(R.id.clubPlace);
         ImageView image = (ImageView) convertView.findViewById(R.id.clubImageView);
 
-        image.setImageResource(R.drawable.img1);
+        image.setImageResource(R.drawable.group_6);
         if(itemCategory.get(position).clubImage.length() > 7)
         {
             String url = "http://inuclub.us.to:3303/" + itemCategory.get(position).clubImage;

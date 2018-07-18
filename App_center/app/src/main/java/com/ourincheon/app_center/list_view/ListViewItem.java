@@ -8,4 +8,5 @@ public class ListViewItem {
     public String clubName;
     public String clubLocation;
     public String clubImage;
+    public int clubNum;
 }

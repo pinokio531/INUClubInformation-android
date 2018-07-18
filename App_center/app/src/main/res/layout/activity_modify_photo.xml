@@ -1,97 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/modify"
-        android:layout_width="145dp"
-        android:layout_height="45dp"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="82dp"
-        android:singleLine="true"
-        android:text="동아리수정"
-        android:textSize="30dp"
-        android:textColor="#ffffff"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
-        android:paddingLeft="1dp"
-        android:paddingRight="15dp"
-        android:layout_alignStart="@+id/modify"
-        android:layout_below="@+id/modify"
-        android:layout_marginTop="67.7dp"
-        android:text="사진을 업로드 해주세요"
-        android:textSize="13dp"
-        android:textColor="#ffffff"/>
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="70dp"
+        android:paddingLeft="30dp"
+        android:paddingBottom="10dp"
+        android:text="동아리 수정"
+        android:textColor="#ffffff"
+        android:textSize="30dp" />
 
     <LinearLayout
-        android:layout_width="295dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="239dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:id="@+id/linearLayout">
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/eventTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사진을 업로드 해주세요"
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:paddingLeft="8dp"/>
+
+        <LinearLayout
+            android:layout_marginTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:id="@+id/linearLayout">
 
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="66dp"
-            android:layout_height="67dp"
-            android:layout_gravity=""
-            android:layout_alignParentStart="true"
-            app:srcCompat="@drawable/photoplus" />
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="67dp"
+                android:layout_height="67dp"
+                android:layout_weight="0.2"
+                android:background="@null"
+                android:src="@drawable/photoplus" />
 
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="66dp"
-            android:layout_height="67dp"
-            android:orientation="vertical"
-            android:layout_marginStart="9.7dp"
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="67dp"
+                android:layout_height="67dp"
+                android:layout_weight="0.2"
+                android:background="@null"
+                android:src="@drawable/photoplus" />
 
-            app:srcCompat="@drawable/photoplus" />
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="67dp"
+                android:layout_height="67dp"
+                android:layout_weight="0.2"
+                android:background="@null"
+                android:src="@drawable/photoplus" />
 
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="66dp"
-            android:layout_height="67dp"
-            android:orientation="vertical"
-            android:layout_marginStart="9.7dp"
-            app:srcCompat="@drawable/photoplus" />
+            <ImageButton
+                android:layout_width="67dp"
+                android:layout_height="67dp"
+                android:layout_weight="0.2"
+                android:background="@null"
+                android:src="@drawable/photoplus" />
 
-        <ImageButton
-            android:layout_width="66dp"
-            android:layout_height="67dp"
-            android:orientation="vertical"
-            android:layout_marginStart="9.7dp"
-            app:srcCompat="@drawable/photoplus" />
-
+        </LinearLayout>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_alignEnd="@+id/linearLayout"
-        android:layout_below="@+id/linearLayout"
-        android:layout_marginTop="64dp"
 
-        android:text="다음"
-        android:textSize="18sp"
-        android:textColor="#ffffff"
-        android:background="#00fabfbf"/>
+    <RelativeLayout
+        android:layout_marginTop="30dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_marginRight="30dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/Blogin"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/btn_setting"
+            android:text="다음" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/Blogin"/>
+    </RelativeLayout>
 
 
-</RelativeLayout>
+</LinearLayout>

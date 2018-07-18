@@ -9,11 +9,15 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface NetworkInterface {
     @GET("club/search?")
     Call<ArrayList<JsonObject>> getInformation(@Query("keyword") String clubname);
+
+    @GET("/club/info/{clubnum}")
+    Call<ArrayList<JsonObject>> getDetailInformation(@Path("clubnum") int num);
 
     @POST("user/login")
     Call<String> getLoginInfo(@Body LoginData loginData);

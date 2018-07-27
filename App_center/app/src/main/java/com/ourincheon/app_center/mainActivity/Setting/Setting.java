@@ -47,12 +47,20 @@ public class Setting extends Fragment {
             }
         });
 
+        Intent intent = getActivity().getIntent();
+        final String clubnum = intent.getStringExtra("clubIdNumber");
+
+        TextView clubNB = (TextView) layout.findViewById(R.id.clubID);
+        clubNB.setText(clubnum);
+
+
         final ArrayList<String> settingList = new ArrayList<String>();
         settingList.add("행사 등록");
         settingList.add("행사 수정");
         settingList.add("동아리 내용 수정");
         settingList.add("동아리 사진 수정");
         settingList.add("로그아웃");
+
 
         ArrayAdapter<String> listviewapater = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, settingList){
             @NonNull
@@ -75,6 +83,7 @@ public class Setting extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(getActivity(), Loading.class);
                 intent.putExtra("listValue", settingList.get(i).toString());
+                intent.putExtra("clubIdNumber", clubnum);
                 startActivity(intent);
             }
         });

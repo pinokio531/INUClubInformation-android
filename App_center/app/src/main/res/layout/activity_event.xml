@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/EventPage">
 
 
 
@@ -47,6 +48,7 @@
             android:textColor="#de000000"
             android:gravity="start"
             android:layout_marginTop="10dp"
+            android:inputType="text"
             android:maxLines="1"
             android:padding="8dp"/>
 
@@ -76,6 +78,7 @@
             android:backgroundTint="#ffffff"
             android:textSize="11sp"
             android:textColor="#de000000"
+            android:inputType="text"
             android:maxLines="1"
             android:background="@drawable/xml_border"
             android:layout_marginTop="10dp"

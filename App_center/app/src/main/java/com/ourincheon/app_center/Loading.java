@@ -13,6 +13,7 @@ import com.ourincheon.app_center.mainActivity.Setting.ModifyEvent.Event;
 public class Loading extends AppCompatActivity {
 
     String loadingText;
+    String clubnum;
     TextView textView;
 
     @Override
@@ -22,6 +23,7 @@ public class Loading extends AppCompatActivity {
 
         Intent intent = getIntent();
         loadingText = intent.getStringExtra("listValue");
+        clubnum = intent.getStringExtra("clubIdNumber");
 
         textView = (TextView) findViewById(R.id.testhaha);
 
@@ -35,6 +37,7 @@ public class Loading extends AppCompatActivity {
         }
         else{
             openPage = new Intent(Loading.this, ModifyText.class);
+            openPage.putExtra("clubIdNumber", clubnum);
         }
         startActivity(openPage);
         finish();

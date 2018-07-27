@@ -6,11 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/clubImageView2"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/clubImages"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@drawable/img2" />
+        android:layout_height="300dp"></android.support.v4.view.ViewPager>
 
     <LinearLayout
         android:layout_width="match_parent"

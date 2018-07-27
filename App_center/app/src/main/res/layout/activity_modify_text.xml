@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/Modify_text_Page">
 
 
     <TextView
@@ -74,6 +75,7 @@
             android:backgroundTint="#ffffff"
             android:background="@drawable/xml_border"
             android:textSize="11sp"
+            android:inputType="text"
             android:maxLines="1"
             android:textColor="#de000000"
             android:gravity="start"
@@ -123,7 +125,7 @@
         <Button
             android:layout_marginRight="30dp"
             android:layout_alignParentRight="true"
-            android:id="@+id/Blogin"
+            android:id="@+id/B_submit"
             android:textColor="@android:color/white"
             android:textSize="20dp"
             android:layout_width="80dp"
@@ -135,7 +137,7 @@
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_below="@+id/Blogin"/>
+            android:layout_below="@+id/B_submit"/>
     </RelativeLayout>
 
 

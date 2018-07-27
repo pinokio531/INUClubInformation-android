@@ -3,10 +3,13 @@ package com.ourincheon.app_center.mainActivity.Setting.ModifyEvent;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -33,6 +36,8 @@ public class Event extends AppCompatActivity {
     String M;
     String H;
 
+    LinearLayout layout;
+
     static final int DATEDIALOG = 1;
     static final int TIMEDIALOG = 2;
 
@@ -43,6 +48,10 @@ public class Event extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
+
+        layout = (LinearLayout) findViewById(R.id.EventPage);
+
+        keybordControl();
 
         calendar = (TextView) findViewById(R.id.dateContents);
         calendar.setOnClickListener(new View.OnClickListener() {
@@ -146,6 +155,17 @@ public class Event extends AppCompatActivity {
         }
 
     };
+
+    public void keybordControl(){
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InputMethodManager touch_hide = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                touch_hide.hideSoftInputFromWindow(layout.getWindowToken(),0);
+            }
+        });
+    }
 
 
 }

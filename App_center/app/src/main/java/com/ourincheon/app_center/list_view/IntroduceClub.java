@@ -3,13 +3,21 @@ package com.ourincheon.app_center.list_view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.JsonObject;
 import com.ourincheon.app_center.R;
 import com.ourincheon.app_center.application.NetworkController;
+import com.ourincheon.app_center.list_view.Images.Image1;
+import com.ourincheon.app_center.list_view.Images.Image2;
+import com.ourincheon.app_center.list_view.Images.Image3;
+import com.ourincheon.app_center.list_view.Images.Image4;
 
 import java.util.ArrayList;
 
@@ -17,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class IntroduceClub extends AppCompatActivity{
+public class IntroduceClub extends FragmentActivity{
 
     private TextView introduce;
     private TextView location;
@@ -26,6 +34,8 @@ public class IntroduceClub extends AppCompatActivity{
     private TextView ph_number;
     private TextView club_name;
 
+    ViewPager viewPager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +43,14 @@ public class IntroduceClub extends AppCompatActivity{
 
         introduce = (TextView) findViewById(R.id.introduceClub);
         location = (TextView) findViewById(R.id.place);
-        picture = (ImageView) findViewById(R.id.clubImageView2);
         represent = (TextView) findViewById(R.id.representName);
         ph_number = (TextView) findViewById(R.id.representNumber);
         club_name = (TextView) findViewById(R.id.clubName2);
+
+        viewPager = (ViewPager) findViewById(R.id.clubImages);
+        viewPager.setAdapter(new pageAdapter(getSupportFragmentManager()));
+        viewPager.setCurrentItem(0);
+        viewPager.setOffscreenPageLimit(4);
 
         Intent intent = getIntent();
         int getNB = intent.getIntExtra("club_number", 0);
@@ -64,5 +78,32 @@ public class IntroduceClub extends AppCompatActivity{
 
             }
         });
+    }
+
+    private class pageAdapter extends FragmentPagerAdapter {
+        public pageAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position){
+                case 0:
+                    return new Image1();
+                case 1:
+                    return new Image2();
+                case 2:
+                    return new Image3();
+                case 3:
+                    return new Image4();
+                default:
+                    return null;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 4;
+        }
     }
 }

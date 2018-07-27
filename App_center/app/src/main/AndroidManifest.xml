@@ -4,7 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
+
     <application
+        android:name=".application.NetworkController"
         android:allowBackup="true"
         android:icon="@mipmap/icon"
         android:label="인천대\n동아리"
@@ -21,6 +23,7 @@
         </activity>
 
         <activity android:name=".mainActivity.Login"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/WhiteTheme"></activity>
 
         <activity
@@ -42,21 +45,26 @@
             android:theme="@style/WhiteTheme"></activity>
         <activity
             android:name=".mainActivity.Setting.ModifyEvent.Event"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/BlueTheme"/>
         <activity
             android:name=".mainActivity.Setting.ModifyEvent.EventDate"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/BlueTheme"/>
         <activity
             android:name=".mainActivity.Setting.ModifyClubInformation.ModifyPhoto"
             android:theme="@style/BlueTheme"/>
         <activity
             android:name=".mainActivity.Setting.ModifyClubInformation.ModifyText"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/BlueTheme"/>
         <activity
             android:name=".PopUp"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
         <activity android:name=".testPage"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
+        
     </application>
 
 </manifest>

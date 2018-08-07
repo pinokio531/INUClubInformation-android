@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.JsonObject;
@@ -29,7 +28,6 @@ public class IntroduceClub extends FragmentActivity{
 
     private TextView introduce;
     private TextView location;
-    private ImageView picture;
     private TextView represent;
     private TextView ph_number;
     private TextView club_name;

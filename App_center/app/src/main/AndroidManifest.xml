@@ -3,6 +3,10 @@
     package="com.ourincheon.app_center">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
 
     <application
@@ -21,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 
         <activity android:name=".mainActivity.Login"
             android:windowSoftInputMode="stateAlwaysHidden"
@@ -48,7 +53,7 @@
             android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/BlueTheme"/>
         <activity
-            android:name=".mainActivity.Setting.ModifyEvent.EventDate"
+            android:name=".mainActivity.Setting.ModifyEvent.Event_edit"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/BlueTheme"/>
         <activity
@@ -61,9 +66,8 @@
         <activity
             android:name=".PopUp"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
-        <activity android:name=".testPage"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
 
+        <activity android:name=".testPage"></activity>
         
     </application>
 

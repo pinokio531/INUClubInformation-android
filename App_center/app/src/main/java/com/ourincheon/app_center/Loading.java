@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.ourincheon.app_center.mainActivity.Setting.ModifyClubInformation.ModifyPhoto;
 import com.ourincheon.app_center.mainActivity.Setting.ModifyClubInformation.ModifyText;
 import com.ourincheon.app_center.mainActivity.Setting.ModifyEvent.Event;
+import com.ourincheon.app_center.mainActivity.Setting.ModifyEvent.Event_edit;
 
 public class Loading extends AppCompatActivity {
 
@@ -34,6 +35,7 @@ public class Loading extends AppCompatActivity {
         Intent openPage;
         if(param == true){
             openPage = new Intent(Loading.this, ModifyPhoto.class);
+            openPage.putExtra("clubIdNumber", clubnum);
         }
         else{
             openPage = new Intent(Loading.this, ModifyText.class);
@@ -49,7 +51,8 @@ public class Loading extends AppCompatActivity {
             openPage = new Intent(Loading.this, Event.class);
         }
         else{
-            openPage = new Intent(Loading.this, Event.class);
+            openPage = new Intent(Loading.this, Event_edit.class);
+            openPage.putExtra("clubIdNumber", clubnum);
         }
         startActivity(openPage);
         finish();

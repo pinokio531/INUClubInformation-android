@@ -156,22 +156,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:id="@+id/deleteLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_toLeftOf="@+id/UpdateButton"
+            android:layout_marginRight="30dp">
+
+        </LinearLayout>
+
         <Button
             android:layout_marginRight="30dp"
             android:layout_alignParentRight="true"
-            android:id="@+id/Blogin"
+            android:id="@+id/UpdateButton"
             android:textColor="@android:color/white"
             android:textSize="20dp"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@drawable/btn_setting"
-            android:text="제출" />
+            android:text="등록" />
 
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_below="@+id/Blogin"/>
+            android:layout_below="@+id/UpdateButton"/>
     </RelativeLayout>
 
 </LinearLayout>

@@ -13,7 +13,7 @@ import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.ourincheon.app_center.Calender;
+import com.ourincheon.app_center.mainActivity.CalendarPage.Calender;
 import com.ourincheon.app_center.R;
 import com.ourincheon.app_center.mainActivity.Setting.Setting;
 

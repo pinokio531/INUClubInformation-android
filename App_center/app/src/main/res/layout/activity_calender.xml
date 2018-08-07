@@ -4,23 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:paddingTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:weightSum="1">
+    android:orientation="vertical"
+    android:weightSum="1">
 
 
         <CalendarView
+            android:layout_marginTop="44dp"
             android:id="@+id/calendar"
+            android:layout_weight="0.6"
             android:layout_width="match_parent"
-            android:layout_height="450dp"
+            android:layout_height="0px"
             android:maxDate="12/31/2038"
             android:minDate="01/01/2018">
         </CalendarView>
-    </LinearLayout>
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:paddingTop="10dp"
+            android:id="@+id/recylerviewInCarlendar"
+            android:layout_weight="0.4"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:background="@drawable/rectangle_5"
+            android:layout_marginBottom="60dp"
+            ></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

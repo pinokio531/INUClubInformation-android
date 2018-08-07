@@ -50,6 +50,7 @@
                 android:layout_height="67dp"
                 android:layout_weight="0.2"
                 android:background="@null"
+                android:scaleType="fitCenter"
                 android:src="@drawable/photoplus" />
 
             <ImageButton
@@ -58,6 +59,7 @@
                 android:layout_height="67dp"
                 android:layout_weight="0.2"
                 android:background="@null"
+                android:scaleType="fitCenter"
                 android:src="@drawable/photoplus" />
 
             <ImageButton
@@ -66,13 +68,16 @@
                 android:layout_height="67dp"
                 android:layout_weight="0.2"
                 android:background="@null"
+                android:scaleType="fitCenter"
                 android:src="@drawable/photoplus" />
 
             <ImageButton
+                android:id="@+id/imageButton4"
                 android:layout_width="67dp"
                 android:layout_height="67dp"
                 android:layout_weight="0.2"
                 android:background="@null"
+                android:scaleType="fitCenter"
                 android:src="@drawable/photoplus" />
 
         </LinearLayout>
@@ -90,19 +95,19 @@
         <Button
             android:layout_marginRight="30dp"
             android:layout_alignParentRight="true"
-            android:id="@+id/Blogin"
+            android:id="@+id/buttonFinish"
             android:textColor="@android:color/white"
             android:textSize="20dp"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:background="@drawable/btn_setting"
-            android:text="다음" />
+            android:text="완료" />
 
         <TextView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_below="@+id/Blogin"/>
+            android:layout_below="@+id/buttonFinish"/>
     </RelativeLayout>
 
 

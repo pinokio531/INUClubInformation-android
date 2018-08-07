@@ -63,8 +63,6 @@ public class ModifyText extends AppCompatActivity {
                 modifyClubInfo = new ModifyClubInfo(represent, phone, application, contents);
 
                 Intent receieveData = getIntent();
-                String id = receieveData.getStringExtra("userID");
-                String pw = receieveData.getStringExtra("userPW");
 
                 final String clubnum = receieveData.getStringExtra("clubIdNumber");
 

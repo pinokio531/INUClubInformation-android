@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -21,7 +23,10 @@ import com.ourincheon.app_center.R;
 import com.ourincheon.app_center.application.NetworkController;
 import com.ourincheon.app_center.model.ErrorMsgResult;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import okhttp3.MediaType;
@@ -198,23 +203,36 @@ public class ModifyPhoto extends Activity {
     private void sendPicture(Uri imgUri) {
 
         String imagePath = getRealPathFromURI(imgUri);
+        String file_name = "upload";
+        ExifInterface exif = null;
+
+        try {
+            exif = new ExifInterface(imagePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        int exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
+        int exifDegree = exifOrientationToDegrees(exifOrientation);
 
         Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
 
-        UploadImages(imagePath);
+        Bitmap resized_bitmap = BitmapResize(rotate(bitmap, exifDegree), 2048);
+
+        UploadImages(resized_bitmap, file_name);
 
         switch (imagenum){
             case 1:
-                first_photo.setImageBitmap(bitmap);
+                first_photo.setImageBitmap(resized_bitmap);
                 break;
             case 2:
-                second_photo.setImageBitmap(bitmap);
+                second_photo.setImageBitmap(resized_bitmap);
                 break;
             case 3:
-                third_photo.setImageBitmap(bitmap);
+                third_photo.setImageBitmap(resized_bitmap);
                 break;
             case 4:
-                fourth_photo.setImageBitmap(bitmap);
+                fourth_photo.setImageBitmap(resized_bitmap);
                 break;
         }
 
@@ -234,9 +252,28 @@ public class ModifyPhoto extends Activity {
         return cursor.getString(column_index);
     }
 
-    public void UploadImages(String filePath){
+    public void UploadImages(Bitmap bitmap, String filename){
 
-        File file = new File(filePath);
+        File file = new File(this.getCacheDir(), filename);
+        FileOutputStream fileOutputStream = null;
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 80, byteArrayOutputStream);
+        byte[] bitmapData = byteArrayOutputStream.toByteArray();
+
+        try {
+            file.createNewFile();
+            fileOutputStream = new FileOutputStream(file);
+            fileOutputStream.write(bitmapData);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                fileOutputStream.flush();
+                fileOutputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
         RequestBody userfile = RequestBody.create(MediaType.parse("image/*"), file);
 
@@ -257,6 +294,51 @@ public class ModifyPhoto extends Activity {
                 Log.d("이미지 업로드", "성공실패");
             }
         });
+    }
+
+    private int exifOrientationToDegrees(int exifOrientation) {
+        if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_90) {
+            return 90;
+        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_180) {
+            return 180;
+        } else if (exifOrientation == ExifInterface.ORIENTATION_ROTATE_270) {
+            return 270;
+        }
+        return 0;
+    }
+
+    private Bitmap rotate(Bitmap src, float degree) {
+
+        Matrix matrix = new Matrix();
+        matrix.postRotate(degree);
+        return Bitmap.createBitmap(src, 0, 0, src.getWidth(),
+                src.getHeight(), matrix, true);
+    }
+
+    public Bitmap BitmapResize(Bitmap originalBitmap, int maxSize){
+        int width = originalBitmap.getWidth();
+        int height = originalBitmap.getHeight();
+        int resize_width = width;
+        int resize_height = height;
+        float rate = 0.0f;
+
+        if(width > height) {
+
+            if (width > maxSize) {
+                rate = maxSize / (float) width;
+                resize_height = (int) (height*rate);
+                resize_width = maxSize;
+            }
+        }
+        else{
+            if(height > maxSize){
+                rate = maxSize / (float) height;
+                resize_width = (int) (width*rate);
+                resize_height = maxSize;
+            }
+        }
+
+        return Bitmap.createScaledBitmap(originalBitmap, resize_width, resize_height, true);
     }
 
 }

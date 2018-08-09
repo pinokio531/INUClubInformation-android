@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity"
+        <activity android:name=".etc.SplashActivity"
             android:theme="@style/WhiteTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".etc.Permission"
+            android:theme="@style/WhiteTheme"></activity>
 
 
         <activity android:name=".mainActivity.Login"
@@ -46,7 +49,7 @@
             android:theme="@style/WhiteTheme"
             android:windowSoftInputMode="stateAlwaysHidden"/>
 
-        <activity android:name=".Loading"
+        <activity android:name=".etc.Loading"
             android:theme="@style/WhiteTheme"></activity>
         <activity
             android:name=".mainActivity.Setting.ModifyEvent.Event"
@@ -64,7 +67,7 @@
             android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/BlueTheme"/>
         <activity
-            android:name=".PopUp"
+            android:name=".etc.PopUp"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
 
         <activity android:name=".testPage"></activity>

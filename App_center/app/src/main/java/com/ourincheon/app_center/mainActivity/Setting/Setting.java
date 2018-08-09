@@ -17,7 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.ourincheon.app_center.Loading;
+import com.ourincheon.app_center.etc.Loading;
 import com.ourincheon.app_center.R;
 
 import java.util.ArrayList;

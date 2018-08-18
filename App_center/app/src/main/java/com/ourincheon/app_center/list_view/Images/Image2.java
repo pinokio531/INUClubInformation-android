@@ -50,7 +50,7 @@ public class Image2 extends Fragment {
                     image2.setImageResource(R.drawable.group_6);
                 }
                 else{
-                    String url = "http://inuclub.us.to:3303/" + imageLocation;
+                    String url = NetworkController.getURL() + imageLocation;
                     Glide.with(Image2.this).load(url).into(image2);
                 }
             }

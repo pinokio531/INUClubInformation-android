@@ -56,7 +56,7 @@ public class ListViewAdaptor extends BaseAdapter {
         image.setImageResource(R.drawable.group_6);
         if(itemCategory.get(position).clubImage.length() > 7)
         {
-            String url = "http://inuclub.us.to:3303/" + itemCategory.get(position).clubImage;
+            String url = "http://appcenter.us.to:3303/" + itemCategory.get(position).clubImage;
             Glide.with(context).load(url).into(image);
         }
 

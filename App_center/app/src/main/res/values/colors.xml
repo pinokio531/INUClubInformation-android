@@ -8,6 +8,7 @@
     <color name="whiteStatus">#FFFFFF</color>
     <color name="blueStatus">#6190e8</color>
 
+    <color name="transparent">#1A000000</color>
 
     <color name="loginfale">#CC3D3D</color>
 </resources>

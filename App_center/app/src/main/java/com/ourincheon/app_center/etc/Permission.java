@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.ourincheon.app_center.R;
-import com.ourincheon.app_center.mainActivity.Login;
+import com.ourincheon.app_center.mainActivity.Viewpager_main;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 public class Permission extends AppCompatActivity {
@@ -48,7 +48,7 @@ public class Permission extends AppCompatActivity {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .subscribe(granted -> {
                     if(granted){
-                        Intent intent = new Intent(this, Login.class);
+                        Intent intent = new Intent(this, Viewpager_main.class);
                         startActivity(intent);
                         finish();
                     }
@@ -60,7 +60,7 @@ public class Permission extends AppCompatActivity {
             case 0:
                 break;
             case 1:
-                startActivity(new Intent(Permission.this, Login.class));
+                startActivity(new Intent(Permission.this, Viewpager_main.class));
                 finish();
                 break;
         }

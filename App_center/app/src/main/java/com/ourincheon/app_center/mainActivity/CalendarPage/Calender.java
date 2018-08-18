@@ -39,9 +39,13 @@ public class Calender extends Fragment{
     String rMonth;
     String rDayofMonth;
     RecyclerViewItem recyclerViewItem;
+    RecyclerViewAdaptor adaptor;
+    CalendarView calendarview;
 
 
-    public Calender(){}
+    public Calender(){
+
+    }
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,9 +69,13 @@ public class Calender extends Fragment{
         data = simpleDateFormat.format(today);
         date = simpleDateFormat2.format(today);
 
+
         UpdateRecyclerView();
 
-        CalendarView calendarview = (CalendarView) layout.findViewById(R.id.calendar);
+
+        calendarview = (CalendarView) layout.findViewById(R.id.calendar);
+        calendarview.invalidate();
+        recyclerView.invalidate();
         calendarview.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
@@ -136,7 +144,7 @@ public class Calender extends Fragment{
                     Log.d("로그", "등록된 행사 있음");
                 }
 
-                RecyclerViewAdaptor adaptor = new RecyclerViewAdaptor(recyclerViewItemList);
+                adaptor = new RecyclerViewAdaptor(recyclerViewItemList);
                 recyclerView.setAdapter(adaptor);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
 
@@ -153,4 +161,5 @@ public class Calender extends Fragment{
             }
         });
     }
+
 }

@@ -35,7 +35,7 @@
             android:theme="@style/WhiteTheme"></activity>
 
         <activity
-            android:windowSoftInputMode="stateAlwaysHidden"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustNothing"
             android:name=".mainActivity.Viewpager_main"
             android:theme="@style/WhiteTheme"/>
 
@@ -70,7 +70,7 @@
             android:name=".etc.PopUp"
             android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
 
-        <activity android:name=".testPage"></activity>
+        <activity android:name=".test.testPage"></activity>
         
     </application>
 

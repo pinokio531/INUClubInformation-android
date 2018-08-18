@@ -7,10 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.ourincheon.app_center.R;
+import com.ourincheon.app_center.mainActivity.Login;
 import com.ourincheon.app_center.mainActivity.Setting.ModifyClubInformation.ModifyPhoto;
 import com.ourincheon.app_center.mainActivity.Setting.ModifyClubInformation.ModifyText;
 import com.ourincheon.app_center.mainActivity.Setting.ModifyEvent.Event;
 import com.ourincheon.app_center.mainActivity.Setting.ModifyEvent.Event_edit;
+import com.ourincheon.app_center.mainActivity.Viewpager_main;
 
 public class Loading extends AppCompatActivity {
 
@@ -59,6 +61,21 @@ public class Loading extends AppCompatActivity {
         finish();
     }
 
+    public void LoginGoGo(){
+        Intent intent = new Intent(Loading.this, Login.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void LogoutGoGo(){
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
+        finish();
+        Viewpager_main.viewpagerMain.finish();
+
+    }
+
     public void OpenNext(){
         switch (loadingText){
             case "행사 등록":
@@ -77,9 +94,15 @@ public class Loading extends AppCompatActivity {
                 ModifyContent(true);
                 break;
 
-            case "로그아웃":
+            case "로그인":
+                LoginGoGo();
                 textView.setText(loadingText);
                 break;
+
+            case "로그아웃":
+                LogoutGoGo();
+                break;
+
 
             default:
                 textView.setText("잘못된 접속입니다.");

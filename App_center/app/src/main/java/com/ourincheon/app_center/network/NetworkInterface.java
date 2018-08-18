@@ -12,6 +12,7 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -20,6 +21,10 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface NetworkInterface {
+
+    @GET("club")
+    Call<ArrayList<JsonObject>> getAllClub();
+
     @GET("club/search?")
     Call<ArrayList<JsonObject>> getInformation(@Query("keyword") String clubname);
 
@@ -51,6 +56,11 @@ public interface NetworkInterface {
 
     @POST("event/{eventnum}/delete")
     Call<ErrorMsgResult> deleteEvent(@Path("eventnum") int eventnum);
+
+    @DELETE("club/image/{clubnum}/{imagenum}")
+    Call<ErrorMsgResult> deleteImage(@Path("clubnum") int clubnum, @Path("imagenum") int imagenum);
+
+
 
 
 }

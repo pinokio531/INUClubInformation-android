@@ -49,7 +49,6 @@ public class Login extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.resultF);
         layout = (LinearLayout) findViewById(R.id.LoginPage);
 
-
         initNetwork();
         keybordControl();
 
@@ -79,6 +78,7 @@ public class Login extends AppCompatActivity {
                             startActivity(intent);
                             Toast.makeText(Login.this, "로그인 성공", Toast.LENGTH_SHORT).show();
                             finish();
+                            Viewpager_main.viewpagerMain.finish();
 
                         }
                         else{

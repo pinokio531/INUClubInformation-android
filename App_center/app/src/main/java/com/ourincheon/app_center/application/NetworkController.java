@@ -10,12 +10,13 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetworkController extends Application{
     private static NetworkController ourInstance;
-    private static String URL = "http://inuclub.us.to:3303/";
+    private static String URL = "http://appcenter.us.to:3303/";
     //inuclub.us.to:3303/
     //13.124.254.99:3303/
+    //appcenter.us//
     private NetworkInterface networkInterface = null;
 
-    public String getURL(){
+    public static String getURL(){
         return URL;
     }
 

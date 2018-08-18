@@ -4,6 +4,8 @@ import java.util.List;
 
 public class ClubInfo {
 
+
+    //사용 안하는 모델
     List<Item> index;
 
     public List<Item> getClub(){

@@ -37,7 +37,6 @@
             android:paddingLeft="8dp"/>
 
         <EditText
-            android:text="app"
             android:id="@+id/idInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,7 +69,6 @@
             android:paddingLeft="8dp"/>
 
         <EditText
-            android:text="cen"
             android:id="@+id/pwInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.google.gson.JsonObject;
 import com.ourincheon.app_center.R;
 import com.ourincheon.app_center.application.NetworkController;
+import com.ourincheon.app_center.mainActivity.Viewpager_main;
 import com.ourincheon.app_center.model.ErrorMsgResult;
 import com.ourincheon.app_center.model.UpdateEvent;
 
@@ -194,6 +195,8 @@ public class Event extends AppCompatActivity {
                 Log.d("등록 숫자", String.valueOf(num_event));
 
                 finish();
+                Viewpager_main.fragmentPosition = 2;
+                ((Viewpager_main) Viewpager_main.mainContext).onResume();
             }
         });
 

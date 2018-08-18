@@ -2,6 +2,8 @@ package com.ourincheon.app_center.mainActivity.Setting.ModifyClubInformation;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -48,7 +50,7 @@ public class ModifyPhoto extends Activity {
     private ImageButton second_photo;
     private ImageButton third_photo;
     private ImageButton fourth_photo;
-    String baseUrl = "http://inuclub.us.to:3303/";
+    String baseUrl = "http://appcenter.us.to:3303/";
     String imageUrl;
     String image1, image2, image3, image4 = null;
 
@@ -95,7 +97,27 @@ public class ModifyPhoto extends Activity {
             @Override
             public void onClick(View v) {
                 imagenum = 1;
-                selectGallery();
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ModifyPhoto.this);
+                dialog.setTitle("사진설정");
+                dialog.setMessage("원하는 메뉴를 선택해주세요");
+
+                dialog.setPositiveButton("사진 선택", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        selectGallery();
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.setNegativeButton("사진 삭제", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DeleteImages();
+                        first_photo.setImageResource(R.drawable.photoplus);
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
 
@@ -103,7 +125,27 @@ public class ModifyPhoto extends Activity {
             @Override
             public void onClick(View v) {
                 imagenum = 2;
-                selectGallery();
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ModifyPhoto.this);
+                dialog.setTitle("사진설정");
+                dialog.setMessage("원하는 메뉴를 선택해주세요");
+
+                dialog.setPositiveButton("사진 선택", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        selectGallery();
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.setNegativeButton("사진 삭제", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DeleteImages();
+                        second_photo.setImageResource(R.drawable.photoplus);
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
 
@@ -111,7 +153,27 @@ public class ModifyPhoto extends Activity {
             @Override
             public void onClick(View v) {
                 imagenum = 3;
-                selectGallery();
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ModifyPhoto.this);
+                dialog.setTitle("사진설정");
+                dialog.setMessage("원하는 메뉴를 선택해주세요");
+
+                dialog.setPositiveButton("사진 선택", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        selectGallery();
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.setNegativeButton("사진 삭제", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DeleteImages();
+                        third_photo.setImageResource(R.drawable.photoplus);
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
 
@@ -119,7 +181,27 @@ public class ModifyPhoto extends Activity {
             @Override
             public void onClick(View v) {
                 imagenum = 4;
-                selectGallery();
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ModifyPhoto.this);
+                dialog.setTitle("사진설정");
+                dialog.setMessage("원하는 메뉴를 선택해주세요");
+
+                dialog.setPositiveButton("사진 선택", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        selectGallery();
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.setNegativeButton("사진 삭제", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DeleteImages();
+                        fourth_photo.setImageResource(R.drawable.photoplus);
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
 
@@ -252,6 +334,24 @@ public class ModifyPhoto extends Activity {
         return cursor.getString(column_index);
     }
 
+    public void DeleteImages(){
+        Call<ErrorMsgResult> call = NetworkController.getInstance().getNetworkInterface().deleteImage(clubnum, imagenum);
+        call.enqueue(new Callback<ErrorMsgResult>() {
+            @Override
+            public void onResponse(Call<ErrorMsgResult> call, Response<ErrorMsgResult> response) {
+
+                Log.d("a_clubnum", String.valueOf(clubnum));
+                Log.d("a_clubnum2", String.valueOf(imagenum));
+            }
+
+            @Override
+            public void onFailure(Call<ErrorMsgResult> call, Throwable t) {
+
+            }
+        });
+
+    }
+
     public void UploadImages(Bitmap bitmap, String filename){
 
         File file = new File(this.getCacheDir(), filename);
@@ -275,7 +375,7 @@ public class ModifyPhoto extends Activity {
             }
         }
 
-        RequestBody userfile = RequestBody.create(MediaType.parse("image/*"), file);
+        RequestBody userfile = RequestBody.create(MediaType.parse("image/.jpg"), file);
 
         MultipartBody.Part body =MultipartBody.Part.createFormData("userfile", file.getName(), userfile);
 

@@ -33,12 +33,14 @@ public class NetworkController extends Application{
     public void onCreate() {
         super.onCreate();
 
+
         ourInstance = this;
         buildService();
 
     }
 
     public void buildService(){
+
         OkHttpClient.Builder okClient = new OkHttpClient.Builder();
         okClient.interceptors().add(new AddCookiesInterceptor());
         okClient.interceptors().add(new ReceieveCookiesInterceptor());
@@ -50,8 +52,6 @@ public class NetworkController extends Application{
                 .build()
                 .create(NetworkInterface.class);
     }
-
-
 
 }
 

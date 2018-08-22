@@ -83,6 +83,7 @@ public class Setting extends Fragment {
         settingList.add("행사 수정");
         settingList.add("동아리 내용 수정");
         settingList.add("동아리 사진 수정");
+        settingList.add("온라인 신청서 만들기");
 
         if(clubNB.getText().toString() == noLogin){
             settingList.add("로그인");
@@ -111,7 +112,7 @@ public class Setting extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if(settingList.get(4).toString() == "로그인"){
+                if(settingList.get(5).toString() == "로그인"){
                     if(settingList.get(i).toString() == "로그인"){
                         Intent intent = new Intent(getActivity(), Loading.class);
                         intent.putExtra("listValue", settingList.get(i).toString());
@@ -124,7 +125,7 @@ public class Setting extends Fragment {
                     }
                 }
                 else{
-                    if(settingList.get(4).toString() == "로그아웃"){
+                    if(settingList.get(5).toString() == "로그아웃"){
                         if(settingList.get(i).toString() == "로그아웃"){
                             getActivity().finish();
                         }

@@ -66,11 +66,10 @@
             android:name=".mainActivity.Setting.ModifyClubInformation.ModifyText"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/BlueTheme"/>
-        <activity
-            android:name=".etc.PopUp"
-            android:theme="@android:style/Theme.DeviceDefault.Light.Dialog" />
 
-        <activity android:name=".test.testPage"></activity>
+        <activity android:name=".mainActivity.Setting.Application.MakeApplication"></activity>
+        <activity android:name=".mainActivity.Setting.Application.Method_Application"></activity>
+        <activity android:name=".mainActivity.Setting.Application.New_Application"></activity>
         
     </application>
 

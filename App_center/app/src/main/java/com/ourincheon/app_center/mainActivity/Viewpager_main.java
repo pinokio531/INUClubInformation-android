@@ -31,9 +31,9 @@ public class Viewpager_main extends FragmentActivity {
 
     long pressedtime;
 
-    public static Activity viewpagerMain;
+    public static Activity viewpagerMain; //종료하려고
 
-    public static Context mainContext;
+    public static Context mainContext; //event에서 갱신하려고
 
     BottomNavigationView bottomNavigationView;
     public static int fragmentPosition;

@@ -1,6 +1,10 @@
 package com.ourincheon.app_center.list_view;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,7 +12,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Gravity;
+import android.view.View;
+import android.webkit.URLUtil;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.JsonObject;
 import com.ourincheon.app_center.R;
@@ -31,6 +42,9 @@ public class IntroduceClub extends FragmentActivity{
     private TextView represent;
     private TextView ph_number;
     private TextView club_name;
+    private FrameLayout bt_apply;
+
+    String apply_url;
 
     ViewPager viewPager;
 
@@ -44,6 +58,7 @@ public class IntroduceClub extends FragmentActivity{
         represent = (TextView) findViewById(R.id.representName);
         ph_number = (TextView) findViewById(R.id.representNumber);
         club_name = (TextView) findViewById(R.id.clubName2);
+        bt_apply = (FrameLayout) findViewById(R.id.clientApplication);
 
         viewPager = (ViewPager) findViewById(R.id.clubImages);
         viewPager.setAdapter(new pageAdapter(getSupportFragmentManager()));
@@ -64,6 +79,8 @@ public class IntroduceClub extends FragmentActivity{
                 String CLlocation = response.body().get(0).getAsJsonObject().get("location").toString().replace("\"", "").replace("\\n", "</br>");
                 String CLintro = response.body().get(0).getAsJsonObject().get("contents").toString().replace("\"", "").replace("\\n", "</br>");
 
+                apply_url = response.body().get(0).getAsJsonObject().get("application").toString().replace("\"", "");
+
                 club_name.setText(CLname.replace("</br>", "\n"));
                 represent.setText(CLrepresent.replace("</br>", "\n"));
                 ph_number.setText(CLphone.replace("</br>", "\n"));
@@ -73,6 +90,58 @@ public class IntroduceClub extends FragmentActivity{
 
             @Override
             public void onFailure(Call<ArrayList<JsonObject>> call, Throwable t) {
+
+            }
+        });
+
+        bt_apply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(URLUtil.isValidUrl(apply_url)){
+                    LinearLayout linearLayout = new LinearLayout(IntroduceClub.this);
+                    ImageView PopupView = new ImageView(IntroduceClub.this);
+                    TextView PopupTextView = new TextView(IntroduceClub.this);
+
+                    linearLayout.setOrientation(LinearLayout.VERTICAL);
+                    linearLayout.setPadding(0, 80, 0, 0);
+
+                    PopupView.setImageResource(R.drawable.page_1);
+
+                    PopupTextView.setText("지원서 페이지로 이동합니다");
+                    PopupTextView.setTextColor(Color.parseColor("#8a000000"));
+                    PopupTextView.setGravity(Gravity.CENTER);
+                    PopupTextView.setPadding(0, 50, 0, 30);
+
+                    linearLayout.addView(PopupView);
+                    linearLayout.addView(PopupTextView);
+
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(IntroduceClub.this);
+                    dialog.setView(linearLayout);
+
+                    dialog.setPositiveButton("동의", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            Intent applyLink = new Intent(Intent.ACTION_VIEW, Uri.parse(apply_url));
+                            applyLink.setPackage("com.android.chrome");
+                            startActivity(applyLink);
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    dialog.show();
+                }
+
+                else{
+                    Toast.makeText(IntroduceClub.this, "이 동아리는 온라인 지원을 받지 않습니다", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });

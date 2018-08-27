@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.webkit.URLUtil;
@@ -64,6 +66,7 @@ public class IntroduceClub extends FragmentActivity{
         viewPager.setAdapter(new pageAdapter(getSupportFragmentManager()));
         viewPager.setCurrentItem(0);
         viewPager.setOffscreenPageLimit(4);
+
 
         Intent intent = getIntent();
         int getNB = intent.getIntExtra("club_number", 0);
@@ -154,6 +157,7 @@ public class IntroduceClub extends FragmentActivity{
 
         @Override
         public Fragment getItem(int position) {
+            TextView textView = new TextView(IntroduceClub.this);
             switch (position){
                 case 0:
                     return new Image1();

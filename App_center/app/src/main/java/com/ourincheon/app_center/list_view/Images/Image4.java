@@ -1,6 +1,7 @@
 package com.ourincheon.app_center.list_view.Images;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.JsonObject;
 import com.ourincheon.app_center.R;
 import com.ourincheon.app_center.application.NetworkController;
+import com.ourincheon.app_center.list_view.IntroduceClub;
 
 import java.util.ArrayList;
 

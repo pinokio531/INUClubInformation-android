@@ -1,5 +1,6 @@
 package com.ourincheon.app_center.mainActivity.Home;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -39,8 +41,15 @@ public class MainActivity extends Fragment {
     private ListView search_list = null;
     private TextView search_view;
     ArrayList<SeachListItem> searchArrayList;
+    ArrayList<String> main_img; //main 이미지 배열리스트
     SearchListViewAdaptor searchListViewAdaptor;
     LinearLayout layout;
+
+    int i = 0;
+
+    String mainUrl;
+
+    ImageView imageView;
 
     public static SearchList searchList;
     public static LinearLayout searchlayout;
@@ -55,18 +64,61 @@ public class MainActivity extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         layout = (LinearLayout) inflater.inflate(R.layout.activity_main, container, false);
 
         search_view = (EditText) layout.findViewById(R.id.SearchEdit);
         searchlayout = (LinearLayout) layout.findViewById(R.id.searchListView);
+        imageView = (ImageView) layout.findViewById(R.id.main_image);
         list = new ArrayList<>();
+
+        callMainImage();
 
         layout.bringChildToFront(searchlayout);
 
         bt_clickEvent();
         addTextList();
+
+        imageView.setOnTouchListener(new View.OnTouchListener() {
+            float x, y;
+            float x2, y2;
+
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                switch (motionEvent.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        x = motionEvent.getX();
+
+                    case MotionEvent.ACTION_UP:
+                        x2 = motionEvent.getX();
+                }
+
+                if(x>x2){
+                    i++;
+                    if(i>=main_img.size()){
+                        i=0;
+                    }
+                    Log.d("인덱스", String.valueOf(i));
+                    Log.d("인덱스사이즈", String.valueOf(main_img.size()));
+                    Glide.with(getContext()).load("http://appcenter.us.to:3303/" + main_img.get(i).toString()).into(imageView);
+                }
+                else if(x<x2){
+                    i--;
+                    if(i<0){
+                        i = main_img.size()-1;
+                    }
+                    Log.d("인덱스", String.valueOf(i));
+                    Log.d("인덱스사이즈", String.valueOf(main_img.size()));
+                    Glide.with(getContext()).load("http://appcenter.us.to:3303/" + main_img.get(i).toString()).into(imageView);
+                }
+
+
+                return true;
+            }
+
+        });
 
         search_view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +144,6 @@ public class MainActivity extends Fragment {
         TextChangeListener();
 
         return layout;
-
     }
 
     public void TextChangeListener(){
@@ -221,11 +272,6 @@ public class MainActivity extends Fragment {
         FrameLayout habit = (FrameLayout) layout.findViewById(R.id.habitLayout);
         FrameLayout study = (FrameLayout) layout.findViewById(R.id.studyLayout);
 
-
-        ImageView imageView = (ImageView) layout.findViewById(R.id.main_image);
-
-        Glide.with(getContext()).load("http://appcenter.us.to:3303/main_img/untitleds.png").into(imageView);
-
         sports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -310,4 +356,26 @@ public class MainActivity extends Fragment {
             }
         });
     }
+
+    public void callMainImage(){
+        Call<ArrayList<JsonObject>> call = NetworkController.getInstance().getNetworkInterface().getMainImage();
+        call.enqueue(new Callback<ArrayList<JsonObject>>() {
+            @Override
+            public void onResponse(Call<ArrayList<JsonObject>> call, Response<ArrayList<JsonObject>> response) {
+                main_img = new ArrayList<String>();
+                for(int h=0; h<response.body().size(); h++){
+                    mainUrl = response.body().get(h).getAsJsonObject().get("img").toString().replace("\"", "");
+                    main_img.add(mainUrl);
+                }
+                Glide.with(getContext()).load("http://appcenter.us.to:3303/" + main_img.get(0).toString()).into(imageView);
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<JsonObject>> call, Throwable t) {
+
+            }
+        });
+    }
+
+
 }

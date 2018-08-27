@@ -25,6 +25,9 @@ public interface NetworkInterface {
     @GET("club")
     Call<ArrayList<JsonObject>> getAllClub();
 
+    @GET("main")
+    Call<ArrayList<JsonObject>> getMainImage();
+
     @GET("club/search?")
     Call<ArrayList<JsonObject>> getInformation(@Query("keyword") String clubname);
 

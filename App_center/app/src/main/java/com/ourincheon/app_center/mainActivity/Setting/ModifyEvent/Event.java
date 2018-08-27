@@ -141,6 +141,7 @@ public class Event extends AppCompatActivity {
 
             LinearLayout.LayoutParams param2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height2);
             TextView textView = new TextView(this);
+            textView.setLayoutParams(param2);
 
             mlayout.addView(bt_delete);
             mlayout.addView(textView);
@@ -153,11 +154,6 @@ public class Event extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<ErrorMsgResult> call, Response<ErrorMsgResult> response) {
 
-                            Intent intent = new Intent(Event.this, Event_edit.class);
-                            intent.putExtra("clubIdNumber", clubnum);
-                            startActivity(intent);
-                            Toast.makeText(Event.this, "삭제가 완료되었습니다.", Toast.LENGTH_SHORT).show();
-                            finish();
                         }
 
                         @Override
@@ -165,6 +161,12 @@ public class Event extends AppCompatActivity {
 
                         }
                     });
+
+                    Intent intent = new Intent(Event.this, Event_edit.class);
+                    intent.putExtra("clubIdNumber", clubnum);
+                    startActivity(intent);
+                    Toast.makeText(Event.this, "삭제가 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
             });
         }

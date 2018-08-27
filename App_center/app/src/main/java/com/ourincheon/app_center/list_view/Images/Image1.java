@@ -64,4 +64,5 @@ public class Image1 extends Fragment {
 
         return layout;
     }
+
 }

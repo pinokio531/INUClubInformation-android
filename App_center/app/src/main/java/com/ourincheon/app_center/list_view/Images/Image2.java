@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.JsonObject;
 import com.ourincheon.app_center.R;
 import com.ourincheon.app_center.application.NetworkController;
+import com.ourincheon.app_center.list_view.IntroduceClub;
 
 import java.util.ArrayList;
 
